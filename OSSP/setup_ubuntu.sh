@@ -11,7 +11,6 @@ sudo apt update && sudo apt upgrade -y
 echo "Installing and enabling UFW..."
 sudo apt install ufw -y
 sudo ufw enable
-sudo ufw allow 'Apache Full'
 
 # Install Apache, MySQL, PHP, and other required packages
 echo "Installing Apache, MySQL, PHP and required packages..."
@@ -61,10 +60,11 @@ sudo bash -c 'cat > /etc/apache2/sites-available/wordpress.conf <<EOF
 </VirtualHost>
 EOF'
 
-# Enable the WordPress site and necessary Apache modules
+# Enable the WordPress site, necessary Apache modules and add Apache to ufw exceptions
 echo "Enabling site and Apache modules..."
 sudo a2ensite wordpress
 sudo a2enmod rewrite
 sudo systemctl reload apache2
+sudo ufw allow 'Apache Full'
 
 echo "WordPress installation complete. Visit http://localhost or http://<your-ip> to continue setup."
