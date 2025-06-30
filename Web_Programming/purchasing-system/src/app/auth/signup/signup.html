@@ -1,0 +1,50 @@
+<section>
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+            <input type="email" matInput placeholder="Your email" ngModel name="email" required #emailInput="ngModel">
+            <mat-error *ngIf="emailInput.hasError('required')">Field should not be empty</mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">Please use the correct email format.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Please enter minimum 8 characters.">
+            <input type="password" matInput placeholder="Your Password" ngModel name="password" required minlength="8" #passInput="ngModel">
+            <mat-hint align="end">{{ passInput.value?.length }} / 8</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Your full name.">
+            <input type="string" matInput placeholder="Your name" ngModel name="fullName" #fullNameInput="ngModel">
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Your phone number.">
+            <input type="string" matInput placeholder="Your phone number" ngModel name="phone" #phoneInput="ngModel">
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Your address.">
+            <input type="string" matInput placeholder="Your address" ngModel name="address" #addressInput="ngModel">
+        </mat-form-field>
+
+        <mat-label>Choose your favorite product types:</mat-label>
+            <div fxLayout="row wrap" fxLayoutGap="10px">
+                <mat-checkbox *ngFor="let type of productTypes"
+                        [(ngModel)]="selectedPreferences[type]"
+                        [name]="type">
+                {{ type }}
+                </mat-checkbox>
+            </div>
+
+        <mat-form-field>
+            <input matInput placeholder="Your date of birth" [matDatepicker]="picker" ngModel name="birthDate" required>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+
+        <mat-checkbox color="primary" ngModel name="acceptance" required>
+            I accept the terms and conditions of use.
+        </mat-checkbox>
+
+        <mat-label *ngIf="errorExists">{{ errorText }}</mat-label>
+        <a routerLink="/login">Go back to login.</a>
+    </form>
+</section>

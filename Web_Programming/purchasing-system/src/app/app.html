@@ -1,0 +1,42 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav opened="true">
+    <mat-nav-list>
+      <a *ngIf="userService.currentUser.email == 'guest@mail.com'" mat-list-item routerLink="/signup" (click)="sidenav.close()">
+        <mat-icon>person</mat-icon>
+        Signup
+      </a>
+      <a *ngIf="userService.currentUser.email == 'guest@mail.com'" mat-list-item routerLink="/login" (click)="sidenav.close()">
+        <mat-icon>login</mat-icon>
+        Login
+      </a>
+      <a *ngIf="userService.currentUser.email != 'guest@mail.com'" mat-list-item routerLink="/orders" (click)="sidenav.close()">
+        <mat-icon>shopping_bag</mat-icon>
+        Shopping
+      </a>
+      <a *ngIf="userService.currentUser.email != 'guest@mail.com'" mat-list-item routerLink="/login" (click)="logOut(); sidenav.close()">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <div>
+        <button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div fxFlex fxLayoutAlign="end" fxLayoutGap="20px" fxHide.xs>
+        <a *ngIf="userService.currentUser.email == 'guest@mail.com'" routerLink="/signup">Signup</a>
+        <a *ngIf="userService.currentUser.email == 'guest@mail.com'" routerLink="/login">Login</a>
+        <a *ngIf="userService.currentUser.email != 'guest@mail.com'" mat-raised-button routerLink="/orders">
+          <mat-icon>shopping_cart</mat-icon>
+        </a>
+        <button *ngIf="userService.currentUser.email != 'guest@mail.com'" mat-raised-button color="warn" (click)="openProfile(userService.currentUser.id)">{{ userService.currentUser.fullName }}</button>
+      </div>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

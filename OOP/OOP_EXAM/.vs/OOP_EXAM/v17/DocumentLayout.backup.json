@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\work_mikroe\\GIT\\Singidunum_Projects\\OOP\\OOP_EXAM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AC318F47-286A-4EFA-B31D-B60E67C55872}|OOP_EXAM.vcxproj|D:\\work_mikroe\\GIT\\Singidunum_Projects\\OOP\\OOP_EXAM\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AC318F47-286A-4EFA-B31D-B60E67C55872}|OOP_EXAM.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\work_mikroe\\GIT\\Singidunum_Projects\\OOP\\OOP_EXAM\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\work_mikroe\\GIT\\Singidunum_Projects\\OOP\\OOP_EXAM\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAC0BAAAAAAAAAAAAAEEBAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-08T15:54:50.445Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

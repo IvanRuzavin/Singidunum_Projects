@@ -1,0 +1,49 @@
+<div fxLayoutAlign="center center">
+    <mat-form-field fxFlex="30%" fxLayoutGap="10px">
+        <input matInput type="text" (keyup)="doFilter($any($event.target).value)">
+    </mat-form-field>
+</div>
+
+<mat-table [dataSource]="productSource" matSort>
+
+    <!-- Category -->
+    <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Category</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.category }}</mat-cell>
+    </ng-container>
+    
+    <!-- Name -->
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+    </ng-container>
+
+    <!-- Quantity -->
+    <ng-container matColumnDef="quantity">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.quantity | number }}</mat-cell>
+    </ng-container>
+
+    <!-- Price -->
+    <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.price | number }}</mat-cell>
+    </ng-container>
+    
+    <!-- Eta -->
+    <ng-container matColumnDef="eta">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Delivery date</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.eta | date }}</mat-cell>
+    </ng-container>
+    
+    <!-- Status -->
+    <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.status }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let rows; columns: displayedColumns"></mat-row>
+</mat-table>
+
+<mat-paginator [pageSize]="15" [pageSizeOptions]="[2, 4, 6, 8, 10, 15]"></mat-paginator>

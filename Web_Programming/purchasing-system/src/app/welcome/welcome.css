@@ -1,0 +1,21 @@
+div {
+    background-color: rgb(44, 44, 44);
+    height: 80%;
+}
+
+h1 {
+    color: #e2b026
+}
+
+p {
+    color: #ebe7db
+}
+
+a {
+    text-decoration: none;
+    color: #ffffffff;
+}
+
+a:hover {
+    color: rgb(30, 231, 30);
+}

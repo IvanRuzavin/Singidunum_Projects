@@ -1,0 +1,37 @@
+<section fxLayout fxLayoutAlign="center">
+  <mat-card fxFlex="500px">
+    <mat-card-title fxLayoutAlign="center">
+      Order something!
+    </mat-card-title>
+
+    <mat-card-content fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="20px">
+      
+      <!-- Category Dropdown -->
+      <mat-select placeholder="Filter by category" [(value)]="selectedCategory" (selectionChange)="onCategoryChange()">
+        <mat-option *ngFor="let cat of categories" [value]="cat">
+          {{ cat }}
+        </mat-option>
+      </mat-select>
+
+      <!-- Product Dropdown -->
+      <mat-select placeholder="Choose a product" [(value)]="selectedProduct" [disabled]="!selectedCategory">
+        <mat-option *ngFor="let product of filteredProducts" [value]="product">
+          {{ product.name }} - {{ product.category }} (${{ product.price }})
+        </mat-option>
+      </mat-select>
+    </mat-card-content>
+
+    <div *ngIf="selectedProduct" style="margin-top: 16px; text-align: center;">
+      <p><strong>Selected:</strong> {{ selectedProduct.name }}</p>
+      <p><strong>Category:</strong> {{ selectedProduct.category }}</p>
+      <p><strong>Price:</strong> ${{ selectedProduct.price }}</p>
+      <p><strong>ETA:</strong> {{ selectedProduct.eta | date }}</p>
+    </div>
+
+    <mat-card-actions fxLayoutAlign="center">
+      <button type="submit" mat-raised-button (click)="onRequestOrder()" [disabled]="!selectedProduct">
+        Order!
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>

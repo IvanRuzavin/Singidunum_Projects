@@ -1,0 +1,18 @@
+form {
+    height: 450px;
+    border: 1px solid #000;
+}
+
+mat-form-field {
+    width: 400px;
+    padding-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffffff;
+}
+
+a:hover {
+    color: rgb(30, 231, 30);
+}
