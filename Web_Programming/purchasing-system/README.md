@@ -1,3 +1,4 @@
+![Purchasing App Demo](images/PurchasingApp.gif)
 ## 🏠 1) Welcome Screen
 
 The welcome screen features a clean and intuitive layout for users who are not logged in:
