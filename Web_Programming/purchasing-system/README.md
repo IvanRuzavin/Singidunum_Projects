@@ -1,59 +1,86 @@
-# AppAngular01
+## 🏠 1) Welcome Screen
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+The welcome screen features a clean and intuitive layout for users who are not logged in:
 
-## Development server
+- 📚 **Side Navigation Bar** with:
+  - Sign Up  
+  - Login  
+- 🧭 **Top Toolbar** with:
+  - Sign Up  
+  - Login  
 
-To start a local development server, run:
+![Welcome Screen](images/wp-1-welcome.png)
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📝 2) Sign-Up Page
 
-## Code scaffolding
+Clicking **Sign Up** opens a registration form requiring the following information:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- 📧 **Email** (input type: `email`)
+- 🔒 **Password** (input type: `password`)
+- 🧑 **Name**
+- 📞 **Phone Number**
+- 🏠 **Address**
+- 🛍️ **Favorite Product Types**
+- 🎂 **Date of Birth** (input type: `date`)
+- ✅ **Checkbox** for accepting Terms & Conditions
+- 🚀 **Submit Button** (enabled only when all fields are valid)
+- 🔙 **Back to Login** link
 
-```bash
-ng generate component component-name
-```
+![Sign Up Page](images/wp-2-signup.png)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🔐 3) Logged-In Home Page
 
-## Building
+Once logged in, users gain access to:
 
-To build the project run:
+- 🛒 **Cart Button** in the top-right corner → navigates to the **Order Page**
+- 💸 **“Spend all your money here”** link → also leads to the **Order Page**
+- 📦 **Side Navigation Bar** with:
+  - Shopping  
+  - Logout  
 
-```bash
-ng build
-```
+![Logged-In Home](images/wp-3-welcome.png)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 👤 4) Profile Dialog Window
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Accessible by clicking the **user name button** in the top-right corner. The dialog shows:
 
-```bash
-ng test
-```
+- All signup data (except password)
+- 📝 **Edit** button to update profile info
 
-## Running end-to-end tests
+![Profile Dialog](images/wp-4-editprofile.png)
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## ✏️ 5) Edit Profile Dialog
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Allows the user to update their profile information:
 
-## Additional Resources
+- ✍️ Modify any field  
+- 💾 **Save User** button to confirm changes
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+![Edit Profile](images/wp-5-editprofile.png)
+
+---
+
+## 📦 6) Order Page
+
+Provides a seamless shopping and ordering experience:
+
+- 🆕 **New Order** tab to browse and select products
+- 🔍 **Category Filter** for easier product discovery
+- 🛒 **Order Button** to place orders
+- 🕓 **Order History** tab showing all previous orders
+- ⚠️ **Warning Dialog** for confirming new orders
+
+![Order Page - New Order](images/wp-6-order.png)  
+![Category Filter](images/wp-7-order.png)  
+![Product Filter](images/wp-8-order.png)  
+![Product Properties](images/wp-9-order.png)  
+![Warning Dialog](images/wp-10-order.png)  
+![Order History](images/wp-11-order.png)
